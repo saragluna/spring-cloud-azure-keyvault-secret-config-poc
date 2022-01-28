@@ -1,0 +1,8 @@
+
+# ConfigData Resolver
+org.springframework.boot.context.config.ConfigDataLocationResolver=\
+com.azure.spring.keyvault.secret.config.KeyVaultSecretConfigDataLocationResolver
+# ConfigData Loader
+org.springframework.boot.context.config.ConfigDataLoader=\
+com.azure.spring.keyvault.secret.config.KeyVaultSecretConfigDataLoader
+
