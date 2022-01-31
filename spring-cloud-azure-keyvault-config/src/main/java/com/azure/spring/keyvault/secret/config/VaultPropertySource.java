@@ -38,7 +38,7 @@ class VaultPropertySource extends EnumerablePropertySource<VaultConfigOperations
 
 	private final boolean failFast;
 
-	private final SecretBackendMetadata secretBackendMetadata;
+	private final KeyVaultSecretBackendMetadata secretBackendMetadata;
 
 	private final Map<String, Object> properties = new LinkedHashMap<>();
 
@@ -52,7 +52,7 @@ class VaultPropertySource extends EnumerablePropertySource<VaultConfigOperations
 	 * @param secretBackendMetadata must not be {@literal null}.
 	 */
 	VaultPropertySource(VaultConfigOperations operations, boolean failFast,
-                        SecretBackendMetadata secretBackendMetadata) {
+                        KeyVaultSecretBackendMetadata secretBackendMetadata) {
 
 		super(secretBackendMetadata.getName(), operations);
 

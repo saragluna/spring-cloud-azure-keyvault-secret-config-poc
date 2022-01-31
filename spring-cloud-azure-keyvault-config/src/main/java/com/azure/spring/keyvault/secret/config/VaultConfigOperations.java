@@ -31,7 +31,7 @@ public interface VaultConfigOperations {
 
 	/**
 	 * Read secrets from a secret backend encapsulated within a
-	 * {@link SecretBackendMetadata}. Reading data using this method is suitable for
+	 * {@link KeyVaultSecretBackendMetadata}. Reading data using this method is suitable for
 	 * secret backends that do not require a request body.
 	 * @param secretBackendMetadata must not be {@literal null}.
 	 * @return the configuration data. May be {@literal null}.

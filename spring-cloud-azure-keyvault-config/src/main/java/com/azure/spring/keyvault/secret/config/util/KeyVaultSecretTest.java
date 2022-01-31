@@ -10,6 +10,7 @@ public class KeyVaultSecretTest {
 
        SecretAsyncClient client= builder.buildAsyncClient();
 
+
        client.getSecret("secret-name").subscribe(secret -> {
           secret.getName();
           secret.getValue();
