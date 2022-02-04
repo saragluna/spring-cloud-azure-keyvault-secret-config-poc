@@ -1,0 +1,5 @@
+spring.cloud.azure.keyvault.secret:
+  endpoint: https://shaozliu-kv2.vault.azure.net/
+
+#spring.config.import: keyvault-secret://;keyvault-secret://kv1;keyvault-secret://kv2?previx=foo.
+spring.config.import: keyvault-secret://

@@ -9,12 +9,14 @@ public class VaultProperties implements EnvironmentAware {
     /**
      * Configuration prefix for config properties.
      */
-    public static final String PREFIX = "spring.cloud.azure.keyvault";
+    public static final String PREFIX = "spring.cloud.azure.keyvault.secret";
 
     /**
      * Enable Vault config server.
      */
     private boolean enabled = true;
+
+    private String endpoint;
 
 
 
@@ -59,6 +61,13 @@ public class VaultProperties implements EnvironmentAware {
         this.failFast = failFast;
     }
 
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    public void setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
+    }
 
     public String getApplicationName() {
         return applicationName;

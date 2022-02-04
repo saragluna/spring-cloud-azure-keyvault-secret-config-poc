@@ -29,6 +29,13 @@
       <version>1.4.3</version>
     </dependency>
 
+<!--    this is ugly, we should consider remove this, although the spring cloud vault depends on it-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+    </dependency>
+
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>

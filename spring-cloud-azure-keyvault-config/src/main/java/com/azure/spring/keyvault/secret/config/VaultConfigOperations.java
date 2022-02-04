@@ -16,8 +16,9 @@
 
 package com.azure.spring.keyvault.secret.config;
 
-import org.springframework.lang.Nullable;
-import org.springframework.vault.core.VaultOperations;
+import com.azure.security.keyvault.secrets.models.KeyVaultSecret;
+import reactor.core.publisher.Flux;
+
 
 /**
  * Interface that specified a basic set of Vault operations, implemented by
@@ -25,24 +26,15 @@ import org.springframework.vault.core.VaultOperations;
  *
  * @author Mark Paluch
  * @see VaultConfigTemplate
- * @see Secrets
  */
 public interface VaultConfigOperations {
 
 	/**
 	 * Read secrets from a secret backend encapsulated within a
-	 * {@link KeyVaultSecretBackendMetadata}. Reading data using this method is suitable for
 	 * secret backends that do not require a request body.
-	 * @param secretBackendMetadata must not be {@literal null}.
 	 * @return the configuration data. May be {@literal null}.
 	 * @throws IllegalStateException if {@link VaultProperties#failFast} is enabled.
 	 */
-	@Nullable
-	Secrets read(KeyVaultSecretBackendMetadata secretBackendMetadata);
-
-	/**
-	 * @return the underlying {@link VaultOperations}.
-	 */
-	VaultOperations getVaultOperations();
+    Flux<KeyVaultSecret> readAll();
 
 }
