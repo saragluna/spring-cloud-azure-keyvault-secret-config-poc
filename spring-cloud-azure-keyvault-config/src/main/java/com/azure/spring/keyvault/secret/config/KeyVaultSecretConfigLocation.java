@@ -8,8 +8,6 @@ public class KeyVaultSecretConfigLocation extends ConfigDataResource {
      * Prefix used to indicate a {@link KeyVaultSecretConfigLocation}.
      */
     public static final String VAULT_PREFIX = "keyvault-secret:";
-//    private final KeyVaultSecretBackendMetadata secretBackendMetadata;
-
     private final boolean optional;
 
     /**

@@ -34,22 +34,9 @@ public class KeyVaultSecretConfigDataLocationResolver implements ConfigDataLocat
 
         if (location.getValue().equals(KeyVaultSecretConfigLocation.VAULT_PREFIX)
             || location.getValue().equals(KeyVaultSecretConfigLocation.VAULT_PREFIX + "//")) {
-//            List<KeyVaultSecretBackendMetadata> sorted = getSecretBackends(context, profiles);
-//            return sorted.stream().map(it -> new KeyVaultSecretConfigLocation(it, location.isOptional()))
-//                         .collect(Collectors.toList());
-
             return Collections.singletonList(new KeyVaultSecretConfigLocation(location.getValue(), location.isOptional()));
         }
         return Collections.emptyList();
-
-//        String contextPath = location.getValue().substring(KeyVaultSecretConfigLocation.VAULT_PREFIX.length());
-
-//        while (contextPath.startsWith("/")) {
-//            contextPath = contextPath.substring(1);
-//        }
-//
-//        return Collections.singletonList(
-//            new KeyVaultSecretConfigLocation(contextPath, getPropertyTransformer(contextPath), location.isOptional()));
     }
 
 
@@ -67,19 +54,4 @@ public class KeyVaultSecretConfigDataLocationResolver implements ConfigDataLocat
             return vaultProperties;
         });
     }
-
-//    /**
-//     * supports prefix in contextual path {@link https://docs.spring.io/spring-cloud-vault/docs/current/reference/html/#vault.configdata.locations}
-//     */
-//    private static PropertyTransformer getPropertyTransformer(String contextPath) {
-//
-//        UriComponents uriComponents = UriComponentsBuilder.fromUriString(contextPath).build();
-//        String prefix = uriComponents.getQueryParams().getFirst("prefix");
-//
-//        if (StringUtils.hasText(prefix) && StringUtils.hasText(uriComponents.getPath())) {
-//            return PropertyTransformers.propertyNamePrefix(prefix);
-//        }
-//
-//        return PropertyTransformers.noop();
-//    }
 }

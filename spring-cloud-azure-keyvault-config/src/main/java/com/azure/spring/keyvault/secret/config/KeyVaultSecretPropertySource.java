@@ -70,6 +70,7 @@ class KeyVaultSecretPropertySource extends EnumerablePropertySource<VaultConfigO
         try {
             this.secrets = this.source.readAll();
             this.secrets.subscribe(secret -> {
+                log.info("================ "+secret);
                 this.properties.put(secret.getName(), secret.getValue());
             });
 
